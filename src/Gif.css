@@ -1,0 +1,28 @@
+div.image {
+    position: relative;
+    margin: 0 1em 1em 1em;
+}
+div.image img {
+    vertical-align: middle;
+    width: 100% !important;
+    height: auto !important;
+}
+
+div.image:hover img {
+    opacity: 0.6;
+}
+
+div.image a {
+    display: none;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+div.image:hover a {
+    display: block;
+}
+
+a.add-favorite {
+    font-size: 12px;
+}

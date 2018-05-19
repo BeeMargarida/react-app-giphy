@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Navbar from './Navbar';
+import AppBody from './AppBody';
 import './App.css';
+import './bootstrap.min.css';
+import './fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css';
 
 class App extends Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      openFavorites: false
+    };
+
+    this.changeStateTab = this.changeStateTab.bind(this);
+  }
+
+  changeStateTab() {
+    this.setState(prevState => ({
+      openFavorites: !prevState.openFavorites
+    }), () => {
+      console.log('Favorite Bar Toggled');
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="app-body">
+        <Navbar changeStateTab={this.changeStateTab}/>
+        <AppBody favBar={this.state.openFavorites} />
       </div>
     );
   }

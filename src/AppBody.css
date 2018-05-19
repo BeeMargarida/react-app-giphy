@@ -1,0 +1,21 @@
+div#app-content {
+    height: 100vh;
+}
+
+div#app-content div.gifList {
+    /*transition: all 0.6s ease-in;*/
+}
+
+div#app-content div {
+   
+    /*-webkit-transition: all 0.3s ease-in 0.4s;
+    -moz-transition: all 0.3s ease-in 0.4s;
+    -o-transition: all 0.3s ease-in 0.4s;
+    transition:all 0.3s ease-in 0.4s;*/
+}
+
+@media screen and (max-width: 576px){
+    div#app-content.row div#favorite {
+        order: -1;
+    }
+}
