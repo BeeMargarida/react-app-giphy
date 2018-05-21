@@ -1,9 +1,19 @@
 div#favorite {
     opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 div#favorite.show {
     opacity: 1;
-    visibility: visible;
+    display: block;
+}
+
+
+div#favorite.show div {
+    margin: 0 auto;
+}
+
+div#favorite.show div div.col-12 {
+    margin: 1em 0;
+    padding: 0;
 }

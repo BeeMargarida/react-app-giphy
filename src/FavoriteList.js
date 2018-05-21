@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import GifFav from './GifFav';
 import './FavoriteList.css';
+
 class FavoriteList extends Component {
   render() {
 
@@ -8,10 +9,17 @@ class FavoriteList extends Component {
     if(!this.props.favBar){
       className = "";
     }
+    
+    const gifs = this.props.favGifs.map((info, i) => (
+      <GifFav key={i} gifInfo={info} handlerDeleteFavorite={this.props.handlerDeleteFavorite}/>
+    ));
 
     return (
-        <div className={className} id="favorite">
 
+        <div className={className} id="favorite">
+          <div className="row">
+            {gifs}
+          </div>
         </div>  
     );
   }

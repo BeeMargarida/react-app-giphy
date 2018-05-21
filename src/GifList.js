@@ -13,7 +13,7 @@ class GifList extends Component {
 
     this.state = {
       gifs: [],
-      submittedInput: ''
+      submittedInput: '',
     }
 
     this.submitInput = this.submitInput.bind(this);
@@ -50,12 +50,12 @@ class GifList extends Component {
     }
 
     const gifs = this.state.gifs.map((info, i) => (
-      <Gif key={i} gifInfo={info} />
+      <Gif key={i} gifInfo={info} handlerFavorites={this.props.handlerFavorites}/>
     ));
 
     let header = "";
     if(this.state.submittedInput !== ''){
-    header = (<h4>Search result for <em>{this.state.submittedInput}</em>:</h4>);
+      header = (<h4>Search result for <em>{this.state.submittedInput}</em>:</h4>);
     }
 
     return (

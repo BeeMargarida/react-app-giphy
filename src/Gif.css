@@ -26,3 +26,12 @@ div.image:hover a {
 a.add-favorite {
     font-size: 12px;
 }
+
+@media screen and (max-width: 800px){
+    div.image a {
+        display: block;
+        opacity: 0.4;
+        top:0;
+        right:0;
+    }
+}

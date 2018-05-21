@@ -10,11 +10,11 @@ class Gif extends Component {
 
         return(
 
-            // <div className="image col-lg-3 col-md-4 col-sm-6 col-12">
             <div className="column image">
                 <img src={src} alt={this.props.gifInfo.title}/>
 
-                <a className="btn btn-info text-white add-favorite" > 
+                <a className="btn btn-info text-white add-favorite" 
+                    onClick={(e) => this.props.handlerFavorites(e,this.props.gifInfo)}> 
                     <i className="fas fa-star"></i> 
                 </a>
             </div>
