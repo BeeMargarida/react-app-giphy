@@ -28,12 +28,21 @@ class AppBody extends Component {
 
         this.addFavorite = this.addFavorite.bind(this);
         this.deleteFavorite = this.deleteFavorite.bind(this);
+        this.triggerAnimationNewFavorite = this.triggerAnimationNewFavorite.bind(this);
+        this.hasIndexOfId = this.hasIndexOfId.bind(this);
+    }
+
+    hasIndexOfId(id) {
+        for (var i = 0; i < this.state.favoriteGifs.length; i++)
+            if (this.state.favoriteGifs[i].id === id)
+                return true;
+        return false;
     }
 
     addFavorite(event, gifInfo) {
         event.preventDefault();
 
-        if(this.state.favoriteGifs.indexOf(gifInfo) === -1){
+        if(!this.hasIndexOfId(gifInfo.id)){
             this.setState({
                 favoriteGifs: [...this.state.favoriteGifs, gifInfo]
             }, () => {
@@ -41,7 +50,16 @@ class AppBody extends Component {
             });
         }
 
+        this.triggerAnimationNewFavorite();
+    }
 
+    triggerAnimationNewFavorite() {
+        let favoriteButton = document.querySelector("#favorite_btn");
+
+        favoriteButton.classList.remove("animation_jiggle");
+        
+        void favoriteButton.offsetWidth;
+        favoriteButton.classList.add("animation_jiggle");
     }
 
     deleteFavorite(event, gifInfo) {

@@ -1,6 +1,7 @@
 div#favorite {
     opacity: 0;
     display: none;
+    height: 100%;
 }
 
 div#favorite.show {

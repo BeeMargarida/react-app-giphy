@@ -11,7 +11,7 @@ class Navbar extends Component {
                         <a className="navbar-brand text-white">Tiny Giphy</a>
                     </div>
                     <div className="navbar-right">
-                        <a className="btn btn-warning text-white" 
+                        <a className="btn btn-warning text-white" id="favorite_btn" 
                             onClick={this.props.changeStateTab}>
                             <i className="fas fa-star"></i> 
                         </a>

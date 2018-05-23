@@ -1,0 +1,18 @@
+.animation_jiggle {
+    animation: jiggle 1s ease-in;
+}
+
+@keyframes jiggle {
+    25%, 45% {
+        transform: scale(1.0, 1.0)
+    }
+    30% {
+        transform: scale(1.1, 0.9)
+    }
+    35% {
+        transform: scale(0.9, 1.1) translate(0, -5px)
+    }
+    40% {
+        transform: scale(1.0, 1.0) translate(0, -5px)
+    }
+}

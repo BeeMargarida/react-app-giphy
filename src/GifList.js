@@ -32,8 +32,6 @@ class GifList extends Component {
 
         let gifs = response.data.data;
 
-        console.log(gifs);
-
         self.setState({gifs: gifs, submittedInput: inputText});
 
       })

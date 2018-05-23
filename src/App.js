@@ -21,9 +21,7 @@ class App extends Component {
   changeStateTab() {
     this.setState(prevState => ({
       openFavorites: !prevState.openFavorites
-    }), () => {
-      console.log('Favorite Bar Toggled');
-    });
+    }));
   }
 
   render() {
